@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/appbg"
+    tools:context=".DashboardActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Dispenser 1 Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:strokeColor="@color/purple_500"
+            app:strokeWidth="2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp">
+
+                <ImageView
+                    android:id="@+id/ivDispenser1Icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/applogo"
+                    app:tint="@color/purple_500"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvDispenser1Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Dispenser 1"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#222"
+                    app:layout_constraintStart_toEndOf="@id/ivDispenser1Icon"
+                    app:layout_constraintTop_toTopOf="@id/ivDispenser1Icon"
+                    app:layout_constraintEnd_toStartOf="@id/btnAddSchedule1"
+                    app:layout_constraintBottom_toBottomOf="@id/ivDispenser1Icon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddSchedule1"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:icon="@android:drawable/ic_input_add"
+                    android:iconTint="@color/purple_500"
+                    android:backgroundTint="#fff"
+                    android:contentDescription="Add Schedule"
+                    app:cornerRadius="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivDispenser1Icon"
+                    app:layout_constraintBottom_toBottomOf="@id/ivDispenser1Icon"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    app:layout_constraintTop_toBottomOf="@id/ivDispenser1Icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Label for schedule list -->
+                <TextView
+                    android:id="@+id/labelDispenser1Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Scheduled Times"
+                    android:textColor="#444"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/ivDispenser1Icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="24dp"/>
+                <TextView
+                    android:id="@+id/sublabelDispenser1Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tap + to add a new schedule."
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toBottomOf="@id/labelDispenser1Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="4dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDispenser1Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/sublabelDispenser1Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvDispenser1Empty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="No schedules yet."
+                    android:textColor="#888"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@id/rvDispenser1Schedules"
+                    app:layout_constraintBottom_toBottomOf="@id/rvDispenser1Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Dispenser 2 Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:strokeColor="@color/purple_500"
+            app:strokeWidth="2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp">
+
+                <ImageView
+                    android:id="@+id/ivDispenser2Icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/applogo"
+                    app:tint="@color/purple_500"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvDispenser2Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Dispenser 2"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#222"
+                    app:layout_constraintStart_toEndOf="@id/ivDispenser2Icon"
+                    app:layout_constraintTop_toTopOf="@id/ivDispenser2Icon"
+                    app:layout_constraintEnd_toStartOf="@id/btnAddSchedule2"
+                    app:layout_constraintBottom_toBottomOf="@id/ivDispenser2Icon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddSchedule2"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:icon="@android:drawable/ic_input_add"
+                    android:iconTint="@color/purple_500"
+                    android:backgroundTint="#fff"
+                    android:contentDescription="Add Schedule"
+                    app:cornerRadius="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivDispenser2Icon"
+                    app:layout_constraintBottom_toBottomOf="@id/ivDispenser2Icon"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    app:layout_constraintTop_toBottomOf="@id/ivDispenser2Icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Label for schedule list -->
+                <TextView
+                    android:id="@+id/labelDispenser2Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Scheduled Times"
+                    android:textColor="#444"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/ivDispenser2Icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="24dp"/>
+                <TextView
+                    android:id="@+id/sublabelDispenser2Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tap + to add a new schedule."
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toBottomOf="@id/labelDispenser2Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="4dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDispenser2Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/sublabelDispenser2Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvDispenser2Empty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="No schedules yet."
+                    android:textColor="#888"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@id/rvDispenser2Schedules"
+                    app:layout_constraintBottom_toBottomOf="@id/rvDispenser2Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Dispenser 3 Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:strokeColor="@color/purple_500"
+            app:strokeWidth="2dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp">
+
+                <ImageView
+                    android:id="@+id/ivDispenser3Icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/applogo"
+                    app:tint="@color/purple_500"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvDispenser3Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Dispenser 3"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#222"
+                    app:layout_constraintStart_toEndOf="@id/ivDispenser3Icon"
+                    app:layout_constraintTop_toTopOf="@id/ivDispenser3Icon"
+                    app:layout_constraintEnd_toStartOf="@id/btnAddSchedule3"
+                    app:layout_constraintBottom_toBottomOf="@id/ivDispenser3Icon"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddSchedule3"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:icon="@android:drawable/ic_input_add"
+                    android:iconTint="@color/purple_500"
+                    android:backgroundTint="#fff"
+                    android:contentDescription="Add Schedule"
+                    app:cornerRadius="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivDispenser3Icon"
+                    app:layout_constraintBottom_toBottomOf="@id/ivDispenser3Icon"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0"
+                    app:layout_constraintTop_toBottomOf="@id/ivDispenser3Icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Label for schedule list -->
+                <TextView
+                    android:id="@+id/labelDispenser3Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Scheduled Times"
+                    android:textColor="#444"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/ivDispenser3Icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="24dp"/>
+                <TextView
+                    android:id="@+id/sublabelDispenser3Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tap + to add a new schedule."
+                    android:textColor="#888"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toBottomOf="@id/labelDispenser3Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="4dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDispenser3Schedules"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/sublabelDispenser3Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvDispenser3Empty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="No schedules yet."
+                    android:textColor="#888"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@id/rvDispenser3Schedules"
+                    app:layout_constraintBottom_toBottomOf="@id/rvDispenser3Schedules"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

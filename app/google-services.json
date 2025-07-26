@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "97215639213",
+    "firebase_url": "https://pilldispenser-5c037-default-rtdb.firebaseio.com",
+    "project_id": "pilldispenser-5c037",
+    "storage_bucket": "pilldispenser-5c037.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97215639213:android:8049c8a3cd144e9f9b6024",
+        "android_client_info": {
+          "package_name": "com.qppd.pilldispenserv2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4651wd6_Tyub8UfkIOFm-OSLbsDq-dkw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
